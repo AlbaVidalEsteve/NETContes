@@ -1,0 +1,402 @@
+@charset "utf-8";
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    height: 100%;
+    --primary-color: #205373;
+    --on-primary-soft: #ffffffc5;
+    --on-primary-color: #FFFFFF;
+    --bg-container: #ffffff93;
+    --bg-primary: #FFFFFF;
+    --on-bg-primary: #191C1B;
+    --tertiary-color: #BF8080; 
+    --extra: #8bb7c2;
+}
+
+body{
+    font: 16px/1.5rem 'Roboto', sans-serif;
+    /* max-width: 1920px; */
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    /* height: 100vh; */
+    width: 100%;
+    /** Background */
+    background-image: url(../img/patrick-tomasso-Oaqk7qqNh_c-unsplash.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+    backdrop-filter: blur(2px);
+    color: var(--on-bg-primary);
+    word-spacing: 10%;
+}
+
+a{
+    color: var(--primary-color);
+    text-decoration: none;
+}
+a:hover{
+    font-weight: bold;
+}
+
+header, footer{
+    flex: 0 0 auto;
+    display: flex;
+}
+
+header{
+    /* Colors */
+    background-image: url(../img/alfons-morales-PyUXxFrYweY-unsplash.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: var(--on-primary-color);
+    flex-basis: 10vh;
+}
+
+header div{
+    display: flex;
+    justify-content: center;
+    background-color: #00000069;
+    backdrop-filter: blur(2px);
+    height: 100%;
+    width: 100%;
+    & h1{
+        align-self: center;
+        text-align: center;
+        font-size: 1.2rem;
+        letter-spacing: .2rem;
+    }
+}
+
+/* Barra de navegació */
+nav{
+    background-color: var(--primary-color);
+    color: var(--on-primary-color);
+    flex: 0 0 5vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.9rem;
+    & ul li{
+        display: inline;
+        padding: 1rem;
+    }
+    & ul li:hover{
+        background-color: var(--bg-container);
+        border-bottom: 2px solid #fff;
+    }
+    & a{
+        color: var(--on-primary-color);
+        text-decoration: none;
+    }
+    & a:hover{
+        font-weight: bold;
+    }
+}
+
+nav ul li:nth-of-type(3), nav ul li:nth-of-type(4), nav ul li:nth-of-type(5){
+    display: none;
+}
+
+/* MAIN */
+main{
+    flex: 1 0 auto;
+}
+
+/** Base articles */
+article{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: .5rem;
+    border-radius: 10px;
+    padding: 1rem;
+    & h2{
+        padding: 1rem 0;
+        align-self: center;
+        text-shadow: 3px 3px 15px var(--bg-primary),
+                     3px -3px 15px var(--bg-primary),
+                    -2px 3px 15px var(--bg-primary),
+                    -2px -3px 15px var(--bg-primary);
+    }
+    & section{
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-around;
+        & div{
+            width: 280px;
+            padding: 1rem;
+            margin: .5rem 0;
+            border-radius: 10px;
+            background-color: var(--bg-container);
+            backdrop-filter: blur(10px);
+            & div{
+                display: none;
+            }
+        }
+    }
+}
+/* Article qui som */
+article:first-of-type{
+    background-image: url(../img/faded-section-1.jpeg) ;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover; 
+    & div{
+        width: 270px;
+        justify-content: flex-end;
+        align-self: flex-end;
+        padding: 1rem;
+        border-radius: 10px;
+        background-color: var(--bg-container);
+        backdrop-filter: blur(10px);
+        
+        & p{
+            padding-bottom: .5rem;
+        }
+    }
+}
+/* Article Autors */
+article:nth-child(2){
+    & section{
+        & p{
+            padding-bottom: .5rem;
+        } 
+    }
+}
+
+/* Article Relats */
+article:nth-child(3){
+    & section div ul{
+        display: none;
+        padding: 1rem;
+        list-style: none;
+        & p:first-child{
+            font-weight: bold;
+        }
+    }
+}
+/* Article notícies */
+article:last-of-type{
+    background-color: var(--bg-primary);
+    color: var(--tertiary-color);
+    & div{
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-around;
+        gap: 1rem;
+        padding: 1rem;
+        border-radius: 10px;
+        & figure{
+            width: 100%;
+            & img{
+                width: 100%;
+            }
+        }
+    }
+}
+
+/* Peu de pàgina */
+footer{
+    /* Colors */
+    background-color: var(--primary-color);
+    color: var(--on-primary-soft);
+    /* Flex */
+    flex-basis: 10vh;
+    justify-content: space-between; 
+    align-items: center;
+    padding: .5rem 0;
+    /* Atribucions */
+    & p{
+        margin-left: 2rem;
+        & a{
+            color: var(--on-primary-soft);
+            border-bottom: 1px solid var(--on-primary-soft);
+            
+        }
+        & a:hover{
+            color: var(--on-primary-color);
+            border-bottom: 1px solid var(--on-primary-color);
+        }
+    }
+    /* Icones */
+    & div{
+        width: 20%;
+        display: flex;
+        flex-wrap: wrap;
+        gap: .1rem;
+        justify-content: end;
+        margin-right: 2rem;
+        & figure{
+            width: 25px;
+            & img{
+                width: 100%;
+                object-fit: contain;
+            }
+        }
+    }
+}
+
+
+/** Media queries */
+@media only screen and (min-width: 768px){
+    header div{
+        & h1{
+            font-size: 2.3rem;
+        }
+    }
+
+    nav ul{
+        font-size: 1rem;
+        & li:nth-of-type(3), li:nth-of-type(4), li:nth-of-type(5){
+            display: inline-block;
+        }
+    }
+  
+    footer{
+        padding: 1rem 0;
+        & div{
+            width: 25%;
+            & figure{
+                width: 35px;
+            }
+        }
+    }
+    article:first-child{
+        & div{
+            background-color: transparent;
+            backdrop-filter: none;
+            width: 50%;
+        }
+    }
+    article:nth-child(3){
+        & section div{
+            width: 100%;
+        }
+    }
+
+     article:last-of-type{
+        padding-bottom: 2rem;
+        & div figure{
+            width: 330px;
+        } 
+        
+    }
+}
+
+@media only screen and (min-width: 1024px){
+    article{
+        padding: 1rem 3rem;
+    }
+    article:first-of-type{
+        & section{
+            & div{
+                width: 350px;
+            }
+        }         
+    }
+    article:nth-child(2){
+        & section{
+            & div{
+                width: 400px;
+            }
+        }         
+    }
+    article:nth-child(3){
+        & section{
+            & div{
+                width: 280px;
+            }
+        }         
+    }
+    article:last-child div{
+        justify-content: center;
+        gap: 3rem;      
+    }
+
+}
+
+@media only screen and (min-width: 1440px){
+    header div{
+        & h1{
+            font-size: 4rem;
+        }
+    }
+    nav ul, footer{
+        font-size: 1.2rem;
+    }
+    article:nth-child(2){
+        & section{
+            & div{
+                width: 610px;
+            }
+        }         
+    }
+    article:nth-child(3){
+        & section{
+            & div{
+                width: 410px;
+            }
+        }         
+    }
+    article:last-child{
+        & div{
+            align-items: center;
+            & figure{
+                width: 280px;
+            }
+        }         
+    }
+
+}
+
+@media only screen and (min-width: 1920px){
+    article:nth-child(3) section div ul{
+        display: block;
+    }
+    article:last-child{
+        & div{
+            justify-content: space-evenly;
+        }
+    }
+
+}
+
+@media only screen and (min-width: 2560px){
+    body{
+        font-size: 1.5rem;
+        line-height: 1.5;
+    }
+
+    header{
+        flex-basis: 15vh;
+        & div h1{
+            font-size: 5rem;
+        }
+    }
+    nav{
+        flex-basis: 8vh;
+    }
+    nav ul, footer{
+        font-size: 1.8rem;
+    }
+    
+    article:nth-child(2) section div{
+        width: 900px;       
+    }
+    article:nth-child(3) section div{
+        width: 700px;
+    }
+
+    article:last-child{
+        & div figure {
+            width: 450px;
+        }         
+    }
+}
